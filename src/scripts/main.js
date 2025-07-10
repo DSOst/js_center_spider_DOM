@@ -4,8 +4,13 @@
 const spider = document.querySelector('.spider');
 const wall = document.querySelector('.wall');
 
-spider.style.left =
-  Math.round(wall.clientWidth / 2 - spider.offsetWidth / 2) + 'px';
+function positionSpider() {
+  const leftPosition = (wall.clientWidth - spider.offsetWidth) / 2;
 
-spider.style.top =
-  Math.round(wall.clientHeight / 2 - spider.offsetHeight / 2) + 'px';
+  const topPosition = (wall.clientHeight / 2 - spider.offsetHeight) / 2;
+
+  spider.style.position = 'absolute';
+  spider.style.left = `${leftPosition}px`;
+  spider.style.top = `${topPosition}px`;
+}
+positionSpider();
